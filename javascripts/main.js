@@ -4,6 +4,7 @@ myApp = angular.module('myApp', [])
     		success(function(data, status, headers, config) {
     			console.log(data);
       			$scope.organicAcids = data;
+      			console.log($scope.organicAcids)
     		}).
     		error(function(data, status, headers, config) {
     			console.log('couldnt grab json');
