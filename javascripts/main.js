@@ -3,7 +3,8 @@ myApp = angular.module('myApp', [])
 		$http({method: 'GET', url: './javascripts/organicacids.json'}).
     		success(function(data, status, headers, config) {
       			$scope.organicAcids = data;
-      			console.log($scope.organicAcids)
+      			console.log($scope.organicAcids);
+      			console.log('hello');
     		}).
     		error(function(data, status, headers, config) {
     			console.log('couldnt grab json');
