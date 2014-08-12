@@ -13,10 +13,10 @@
     <title>Organic Acids</title>
   </head>
 
-  <body>
+  <body ng-controller='MyCtrl'>
 
     <!-- HEADER -->
-    <div ng-controller='MyCtrl' id="header_wrap" class="outer">
+    <div  id="header_wrap" class="outer">
         <header class="inner">
 
           <h1 id="project_title">Organic Acids</h1>
@@ -28,6 +28,7 @@
       <section id="main_content" class="inner">
       <div ng-repeat = 'x in boom'>
       {{x}}
+      </div>
         
       </section>
         
