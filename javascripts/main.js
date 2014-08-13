@@ -22,7 +22,18 @@ myApp.controller('MyCtrl', ['$scope', '$http', function($scope, $http){
 	$http({method: 'GET', url: './javascripts/organicacids.json'}).
 		success(function(data, status, headers, config) {
   			$scope.organicAcids = data;
-  			$scope.boom = [0, 1, 2, 3];
+  			dataLength = data.length;
+  			$scope.elutionRestrict = function(restrict){
+  				j = 0;
+  				for(i=0;i<dataLength;i++){
+  					rLow = restrict - 1.5;
+  					rHigh = restrict + 1.5;
+  					if($scope.organicAcids[i]['Elution Time'] > rLow && $scope.organicAcids[i]['Elution Time'] < rHigh){
+  						$scope.filteredOrganics[j] = $scope.organicAcids[i];
+  						j++;
+  					}
+  				}
+  			}
 		}).
 		error(function(data, status, headers, config) {
 			console.log('couldnt grab json');
