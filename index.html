@@ -29,10 +29,9 @@
       <input type="search" ng-model='qCompound' placeholder='Compound'/>
       <input type="searcH" ng-model='qPeak1' placeholder='Peak1'/>
       <input type="searcH" ng-model='qPeak2' placeholder='Peak2'/>
-      <input type='checkbox' ng-model='searchCompound'/>
       <table>
         <th>Compound</th><th>Peaks</th><th>Elution Time</th>
-        <tr ng-repeat='acid in ((organicAcids | filter: qCompound + searchCompound) || (organicAcids | filter: qPeak1) || (organicAcids | filter: qPeak2))'><h4><td>{{acid.Compound}}</td><td>{{acid.Peaks}}</td><td>{{acid['Elution Time']}}</td></h4></tr>
+        <tr ng-repeat='acid in organic acids | filter:qCompound:qPeak1:qPeak2'><h4><td>{{acid.Compound}}</td><td>{{acid.Peaks}}</td><td>{{acid['Elution Time']}}</td></h4></tr>
 
       </table>
         
