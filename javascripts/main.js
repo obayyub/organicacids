@@ -25,6 +25,7 @@ myApp.controller('MyCtrl', ['$scope', '$http', function($scope, $http){
   			dataLength = data.length;
   			$scope.elutionRestrict = function(restrict){
   				j = 0;
+  				$scope.filteredOrganics = [];
   				for(i=0;i<dataLength;i++){
   					rLow = restrict - 1.5;
   					rHigh = restrict + 1.5;
