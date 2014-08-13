@@ -3,7 +3,7 @@ myApp.filter('fuzzyFilter', function () {
 	return function (items, searchText) {
 		var searchWords;
 	
-		
+		if (searchText) {
 			searchWords = searchText.split(' ');
 	
 			return _.filter(items, function (item) {
@@ -13,7 +13,9 @@ myApp.filter('fuzzyFilter', function () {
 					return itemText.search(searchWord.toLowerCase()) !== -1;
 				});
 			});
-		
+		} else {
+			return items;
+		}
 	};
 });
 myApp.controller('MyCtrl', ['$scope', '$http', function($scope, $http){
