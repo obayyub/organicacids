@@ -31,7 +31,7 @@
       <input type="searcH" ng-model='qPeak2' placeholder='Peak2'/>
       <table>
         <th>Compound</th><th>Peaks</th><th>Elution Time</th>
-        <tr ng-repeat='acid in organicacids | filter:qCompound:qPeak1:qPeak2'><h4><td>{{acid.Compound}}</td><td>{{acid.Peaks}}</td><td>{{acid['Elution Time']}}</td></h4></tr>
+        <tr ng-repeat='acid in organicacids | filter:qCompound'><h4><td>{{acid.Compound}}</td><td>{{acid.Peaks}}</td><td>{{acid['Elution Time']}}</td></h4></tr>
 
       </table>
         
