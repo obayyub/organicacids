@@ -36,7 +36,8 @@ myApp.controller('MyCtrl', ['$scope', '$http', function($scope, $http){
   					}
   				}
   			}
-  			$scope.unRestrictElution = function(){
+  			$scope.removeRestrict = function(){
+  				console.log('boom');
   				$scope.filteredOrganics = data;
   			}
 		}).
