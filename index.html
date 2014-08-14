@@ -32,7 +32,10 @@
         <h4>Restrict Elution Time:</h4>
         <input type="text" ng-model='qElution' placeholder='Elution Time'/>
         <button ng-click='elutionRestrict(qElution)'>Restrict Elution Time</button>
-      <input type="search" ng-model='qSearch' placeholder='Search'/>
+      <div>
+        <h4>Search for compounds or peaks:</h4>
+        <input type="search" ng-model='qSearch' placeholder='Search'/>
+      </div>
       <table>
         <th>Compound</th><th>Peaks</th><th>Elution Time</th>
         <tr ng-repeat='acid in filteredOrganics | fuzzyFilter:qSearch'><h4><td>{{acid.Compound}}</td><td>{{acid.Peaks}}</td><td>{{acid['Elution Time']}}</td></h4></tr>
