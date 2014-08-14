@@ -26,9 +26,10 @@ myApp.controller('MyCtrl', ['$scope', '$http', function($scope, $http){
   			$scope.elutionRestrict = function(restrict){
   				j = 0;
   				$scope.filteredOrganics = [];
+  				intRestrict = parseInt(restrict);
   				for(i=0;i<dataLength;i++){
-  					rLow = restrict - 1.5;
-  					rHigh = restrict + 1.5;
+  					rLow = intRestrict - 1.5;
+  					rHigh = intRestrict + 1.5;
   					if($scope.organicAcids[i]['Elution Time'] > rLow && $scope.organicAcids[i]['Elution Time'] < rHigh){
   						$scope.filteredOrganics[j] = $scope.organicAcids[i];
   						j++;
