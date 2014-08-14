@@ -38,6 +38,7 @@ myApp.controller('MyCtrl', ['$scope', '$http', function($scope, $http){
   			}
   			$scope.removeRestrict = function(){
   				console.log('boom');
+  				$scope.qElution = "";
   				$scope.filteredOrganics = data;
   			}
 		}).
