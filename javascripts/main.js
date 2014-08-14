@@ -21,8 +21,8 @@ myApp.filter('fuzzyFilter', function () {
 myApp.controller('MyCtrl', ['$scope', '$http', function($scope, $http){
 	$http({method: 'GET', url: './javascripts/organicacids.json'}).
 		success(function(data, status, headers, config) {
-  			$scope.organicAcids = data;
   			dataLength = data.length;
+  			$scope.filteredOrganics = data;
   			$scope.elutionRestrict = function(restrict){
   				j = 0;
   				$scope.filteredOrganics = [];
@@ -30,11 +30,14 @@ myApp.controller('MyCtrl', ['$scope', '$http', function($scope, $http){
   				for(i=0;i<dataLength;i++){
   					rLow = intRestrict - 1.5;
   					rHigh = intRestrict + 1.5;
-  					if($scope.organicAcids[i]['Elution Time'] > rLow && $scope.organicAcids[i]['Elution Time'] < rHigh){
-  						$scope.filteredOrganics[j] = $scope.organicAcids[i];
+  					if(data[i]['Elution Time'] > rLow && data[i]['Elution Time'] < rHigh){
+  						$scope.filteredOrganics[j] = data[i];
   						j++;
   					}
   				}
+  			}
+  			$scope.unRestrictElution = function(){
+  				$scope.filteredOrganics = data;
   			}
 		}).
 		error(function(data, status, headers, config) {
